@@ -14,16 +14,11 @@ public class Triangle {
     }
 
     public double semiPerimeter(double ab, double ac, double bc) {
-        double p = (ab + ac + bc) / 2;
-        return p;
+        return (ab + ac + bc) / 2;
     }
 
     public boolean exist(double ab, double ac, double bc) {
-        boolean rls = false;
-        if ((ab + ac) > bc && (ab + bc) > ac && (bc + ac) > ab) {
-            rls = true;
-        }
-        return rls;
+        return ((ab + ac) > bc && (ab + bc) > ac && (bc + ac) > ab);
     }
 
     public double area() {
@@ -37,5 +32,4 @@ public class Triangle {
         }
         return area;
     }
-
 }
