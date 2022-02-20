@@ -1,17 +1,17 @@
 package ru.job4j.oop;
 
 public class Error {
-    boolean active;
-    int status;
-    String message;
+    private boolean active;
+    private int status;
+    private String message;
 
     public Error() {
     }
 
-    public Error(boolean eroractive, int erorstatus, String erormessage) {
-        active = eroractive;
-        status = erorstatus;
-        message = erormessage;
+    public Error(boolean active, int status, String message) {
+        this.active = active;
+        this.status = status;
+        this.message = message;
     }
 
     public void printInfo() {
