@@ -15,7 +15,7 @@ public class Student {
         return dateGo;
     }
 
-    private void setDateGo(LocalDateTime dateGo) {
+    public void setDateGo(LocalDateTime dateGo) {
         this.dateGo = dateGo;
     }
 }
