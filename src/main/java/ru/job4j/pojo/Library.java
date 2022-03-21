@@ -21,7 +21,7 @@ public class Library {
         System.out.println("Только книга с именем \"Clean code\"");
         for (int index = 0; index < books.length; index++) {
             Book b = books[index];
-            if (b.getName().equals("Clean code")) {
+            if ("Clean code".equals(b.getName())) {
                 System.out.println("Книга " + b.getName() + " содержит " + b.getNumberPages() + " страниц");
             }
         }
