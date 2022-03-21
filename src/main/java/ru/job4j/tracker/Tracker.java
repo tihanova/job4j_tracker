@@ -67,4 +67,13 @@ public class Tracker {
         /* Если индекс найден возвращаем item, иначе null */
         return index != -1;
     }
+
+    public boolean delete(int id) {
+        /* Находим индекс */
+        int index = indexOf(id);
+        System.arraycopy(items, index + 1, items, index, size - index - 1);
+        items[size - 1] = null;
+        size--;
+        return index != -1;
+    }
 }
