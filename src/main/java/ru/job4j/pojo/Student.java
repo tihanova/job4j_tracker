@@ -7,9 +7,9 @@ import java.util.Date;
 import java.text.ParseException;
 
 public class Student {
-    public String fullName;
-    public String group;
-    public Date dateGo;
+    private String fullName;
+    private String group;
+    private Date dateGo;
 
     public String getDateGo() {
         SimpleDateFormat formatForDateNow = new SimpleDateFormat("dd-MM-yyyy");

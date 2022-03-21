@@ -8,6 +8,6 @@ public class College {
         student.setFullName("Тиханова Анастасия");
         student.setGroup("943321");
         student.setDateGo("01-12-2009");
-        System.out.println("Студент " + student.getFullName() + " обучается в вгруппе " + student.group + " с " + student.getDateGo());
+        System.out.println("Студент " + student.getFullName() + " обучается в вгруппе " + student.getGroup() + " с " + student.getDateGo());
     }
 }
