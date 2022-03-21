@@ -53,23 +53,18 @@ public class Tracker {
     }
 
     public Item findById(int id) {
-        /* Находим индекс */
         int index = indexOf(id);
-        /* Если индекс найден возвращаем item, иначе null */
         return index != -1 ? items[index] : null;
     }
 
     public boolean replace(int id, Item item) {
-        /* Находим индекс */
         int index = indexOf(id);
         item.setId(items[index].getId());
         items[index] = item;
-        /* Если индекс найден возвращаем item, иначе null */
         return index != -1;
     }
 
     public boolean delete(int id) {
-        /* Находим индекс */
         int index = indexOf(id);
         System.arraycopy(items, index + 1, items, index, size - index - 1);
         items[size - 1] = null;
