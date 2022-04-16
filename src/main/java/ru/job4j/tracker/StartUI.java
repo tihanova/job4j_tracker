@@ -1,7 +1,6 @@
 package ru.job4j.tracker;
 
 public class StartUI {
-    private static String msg = "Выберите нужный пункт меню: ";
 
     public static void createItem(Input input, Tracker tracker) {
         System.out.println("=== Create a new Item ===");
@@ -25,8 +24,7 @@ public class StartUI {
 
     public static void deteleItem(Input input, Tracker tracker) {
         System.out.println("=== Delete item ===");
-        System.out.print("Enter id: ");
-        int id = Integer.parseInt(input.askStr(msg));
+        int id = input.askInt("Enter id: ");
         if (tracker.delete(id)) {
             System.out.println("Заявка удалена успешно.");
         } else {
@@ -36,10 +34,8 @@ public class StartUI {
 
     public static void editItem(Input input, Tracker tracker) {
         System.out.println("=== Edit item ===");
-        System.out.print("Enter id: ");
-        int id = Integer.parseInt(input.askStr(msg));
-        System.out.print("Enter name: ");
-        String name = input.askStr(msg);
+        int id = input.askInt("Enter id: ");
+        String name = input.askStr("Enter name: ");
         Item item = new Item();
         item.setName(name);
         if (tracker.replace(id, item)) {
@@ -51,8 +47,7 @@ public class StartUI {
 
     public static void findItemById(Input input, Tracker tracker) {
         System.out.println("=== Find item by id ===");
-        System.out.print("Enter id: ");
-        int id = Integer.parseInt(input.askStr(msg));
+        int id = input.askInt("Enter id: ");
         Item item = tracker.findById(id);
         if (item != null) {
             System.out.println(item);
@@ -63,8 +58,7 @@ public class StartUI {
 
     public static void findItemByName(Input input, Tracker tracker) {
         System.out.println("=== Find items by name ===");
-        System.out.print("Enter name: ");
-        String name = input.askStr(msg);
+        String name = input.askStr("Enter name: ");
         Item[] items = tracker.findByName(name);
         if (items.length > 0) {
             for (Item item : items) {
@@ -79,8 +73,7 @@ public class StartUI {
         boolean run = true;
         while (run) {
             showMenu();
-            System.out.print("Select: ");
-            int select = Integer.parseInt(input.askStr(msg));
+            int select = input.askInt("Select: ");
             if (select == 0) {
                 StartUI.createItem(input, tracker);
             } else if (select == 1) {
