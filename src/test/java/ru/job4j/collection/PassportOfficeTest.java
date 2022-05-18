@@ -22,7 +22,6 @@ public class PassportOfficeTest {
         PassportOffice office = new PassportOffice();
         office.add(citizen);
         office.add(citizenDuplicate);
-        assertThat(office.get(citizen.getPassport()), is(citizen));
-        assertFalse(office.get(citizen.getPassport()) == citizenDuplicate);
+        assertFalse(office.add(citizenDuplicate));
     }
 }
